@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/theme/app_colors.dart';
 import 'package:my_first_app/ui/auth/auth_widget.dart';
-import 'package:my_first_app/ui/main_screen/main_screen_widget.dart';
+import 'package:my_first_app/ui/main_screen/main_screen.dart';
 import 'package:my_first_app/ui/online_shop.dart';
 
 
