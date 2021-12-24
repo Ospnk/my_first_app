@@ -8,8 +8,8 @@ import 'package:my_first_app/ui/home/products/vegetable/vegetable_list_controlle
 class AppBinding extends Bindings {
   @override
   void dependencies() async {
+    Get.put(BinController());
     Get.lazyPut<DrinksController>(() => DrinksController());
-    Get.lazyPut<BinController>(() => BinController());
     Get.lazyPut<FruitsController>(() => FruitsController());
     Get.lazyPut<MilkController>(() => MilkController());
     Get.lazyPut<VegetableController>(() => VegetableController());

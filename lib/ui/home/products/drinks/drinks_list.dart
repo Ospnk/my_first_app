@@ -14,7 +14,6 @@ class _DrinksListWidgetState extends State<DrinksListWidget> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BinController>(
-        init: BinController(),
       builder: (bC) {
         return GetBuilder<DrinksController>(
             init: DrinksController(),

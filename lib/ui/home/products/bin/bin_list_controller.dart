@@ -3,14 +3,14 @@ import 'package:my_first_app/app/routes.dart';
 import 'package:my_first_app/model/product_model.dart';
 
 class BinController extends GetxController {
-  var binProduct = <Product>[];
-  bool isLoading = true;
+  List<Product> binProduct = <Product>[];
+  bool isLoading = false;
 
   void addToBin(Product? item) async {
     Get.toNamed(Routes.BIN);
-    await Future.delayed(const Duration(seconds: 1));
     isLoading = true;
-    if (item != null) binProduct.add(item);
+    await Future.delayed(const Duration(seconds: 1));
+    binProduct.add(item!);
     isLoading = false;
     update();
   }

@@ -15,7 +15,6 @@ class _FruitsListWidgetState extends State<FruitsListWidget> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BinController>(
-        init: BinController(),
       builder: (bC) {
         return GetBuilder<FruitsController>(
             init: FruitsController(),

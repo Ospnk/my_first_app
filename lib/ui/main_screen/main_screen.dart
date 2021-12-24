@@ -16,7 +16,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _selectedTab = 1;
+  int _selectedTab = 0;
 
   Widget? currentTab;
   static final List<Widget> _widgetOptions = <Widget>[
@@ -49,27 +49,32 @@ class _MainScreenState extends State<MainScreen> {
         title: const Text('Our new online shop'),
         actions: <Widget>[
           GetBuilder<BinController>(
-            init: BinController(),
-            builder: (bC) {
-              return Stack(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.shopping_cart),
-                    onPressed: () => Get.toNamed(Routes.BIN),
-                  ),
-                  bC.binProduct.isNotEmpty ? Positioned(
-                    top: 10,
-                    right: 10,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                        child: Container(height: 14, width: 14,
-                            child: Center(child: Text('${bC.binProduct.length}', style: TextStyle(fontSize: 11))),
-                            color: Colors.deepOrange)),
-                  ) : SizedBox(),
-                ],
-              );
-            }
-          ),
+              init: BinController(),
+              builder: (bC) {
+                return Stack(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.shopping_cart),
+                      onPressed: () => Get.toNamed(Routes.BIN),
+                    ),
+                    bC.binProduct.isNotEmpty
+                        ? Positioned(
+                            top: 10,
+                            right: 10,
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50),
+                                child: Container(
+                                    height: 14,
+                                    width: 14,
+                                    child: Center(
+                                        child: Text('${bC.binProduct.length}',
+                                            style: TextStyle(fontSize: 11))),
+                                    color: Colors.deepOrange)),
+                          )
+                        : SizedBox(),
+                  ],
+                );
+              }),
           const SizedBox(width: 20)
         ],
       ),

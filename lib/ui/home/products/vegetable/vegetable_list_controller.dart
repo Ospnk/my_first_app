@@ -25,7 +25,7 @@ class VegetableController extends GetxController {
         return movie.title.contains(query);
       }).toList();
     } else {
-      dataProduct = _vegetab;
+       dataProduct = _vegetab;
     }
   update();
   }

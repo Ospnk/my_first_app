@@ -14,7 +14,6 @@ class _MilkListWidgetState extends State<MilkListWidget> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BinController>(
-      init: BinController(),
       builder: (bC) {
         return GetBuilder<MilkController>(
             init: MilkController(),

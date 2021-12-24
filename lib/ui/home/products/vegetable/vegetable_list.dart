@@ -11,24 +11,23 @@ class VegetablesListWidget extends StatefulWidget {
 }
 
 class _VegetablesListWidgetState extends State<VegetablesListWidget> {
-
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<BinController>(
-      init: BinController(),
-      builder: (bC) {
-        return GetBuilder<VegetableController>(
+    return GetBuilder<BinController>(builder: (bC) {
+      return GetBuilder<VegetableController>(
           init: VegetableController(),
           builder: (vC) {
             return Stack(
               children: [
                 vC.isLoading
                     ? const Align(
-                        alignment: Alignment.center, child: CircularProgressIndicator())
+                        alignment: Alignment.center,
+                        child: CircularProgressIndicator())
                     : vC.dataProduct.isEmpty
                         ? const Center(
                             child: Align(
-                                alignment: Alignment.center, child: Text('data empty')),
+                                alignment: Alignment.center,
+                                child: Text('data empty')),
                           )
                         : ListView.builder(
                             padding: const EdgeInsets.only(top: 70),
@@ -47,12 +46,14 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         border: Border.all(
-                                            color: Colors.black.withOpacity(0.2)),
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(10)),
+                                            color:
+                                                Colors.black.withOpacity(0.2)),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Colors.black.withOpacity(0.1),
+                                            color:
+                                                Colors.black.withOpacity(0.1),
                                             blurRadius: 8,
                                             offset: Offset(0, 2),
                                           ),
@@ -63,7 +64,8 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                                         children: [
                                           Container(
                                               child: Image(
-                                                  image: AssetImage(item.imageName))),
+                                                  image: AssetImage(
+                                                      item.imageName))),
                                           const SizedBox(
                                             width: 15,
                                           ),
@@ -78,10 +80,12 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                                                 Text(
                                                   item.title,
                                                   style: TextStyle(
-                                                      fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       fontSize: 18),
                                                   maxLines: 1,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
@@ -89,9 +93,10 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                                                 Text(
                                                   item.price,
                                                   maxLines: 1,
-                                                  overflow: TextOverflow.ellipsis,
-                                                  style:
-                                                      TextStyle(color: Colors.blueGrey),
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: TextStyle(
+                                                      color: Colors.blueGrey),
                                                 ),
                                                 const SizedBox(
                                                   height: 20,
@@ -99,7 +104,8 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                                                 Text(
                                                   item.description,
                                                   maxLines: 2,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                               ],
                                             ),
@@ -111,8 +117,8 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                                     Material(
                                       color: Colors.transparent,
                                       child: InkWell(
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(10)),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
                                         onTap: () => bC.addToBin(item),
                                       ),
                                     ),
@@ -143,9 +149,7 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                 ),
               ],
             );
-          }
-        );
-      }
-    );
+          });
+    });
   }
 }
