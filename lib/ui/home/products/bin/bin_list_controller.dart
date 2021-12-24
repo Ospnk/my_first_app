@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:my_first_app/app/routes.dart';
 import 'package:my_first_app/model/product_model.dart';
 
 class BinController extends GetxController {
@@ -7,11 +6,10 @@ class BinController extends GetxController {
   bool isLoading = false;
 
   void addToBin(Product? item) async {
-    Get.toNamed(Routes.BIN);
-    isLoading = true;
-    await Future.delayed(const Duration(seconds: 1));
+    // isLoading = true;
+    // await Future.delayed(const Duration(seconds: 1));
     binProduct.add(item!);
-    isLoading = false;
+    // isLoading = false;
     update();
   }
 
