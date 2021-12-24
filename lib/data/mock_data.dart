@@ -36,7 +36,7 @@ final fruitsList = [
       imageName: AppImages.banana,
       title: 'Banan',
       price: '10 \$',
-      description: "A banana is a curved, yellow fruit with a thick skin and soft sweet flesh. If you eat a banana every day for breakfast, your roommate might nickname you "the monkey.""),
+      description: "A banana is a curved, yellow fruit with a thick skin and soft sweet flesh. If you eat a banana every day for breakfast, your roommate might nickname you the monkey."),
   Product(
       imageName: AppImages.orange,
       title: 'orange',

@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_first_app/model/product_model.dart';
 import 'package:my_first_app/ui/home/products/bin/bin_list_controller.dart';
-import 'package:my_first_app/ui/home/products/milk/milk_list_controller.dart';
+import 'package:my_first_app/ui/home/products/fruits/fruits_list_controller.dart';
 
-class MilkListWidget extends StatefulWidget {
-  MilkListWidget({Key? key}) : super(key: key);
+class FruitsListWidget extends StatefulWidget {
+  FruitsListWidget({Key? key}) : super(key: key);
 
   @override
-  _MilkListWidgetState createState() => _MilkListWidgetState();
+  _FruitsListWidgetState createState() => _FruitsListWidgetState();
 }
 
-class _MilkListWidgetState extends State<MilkListWidget> {
+class _FruitsListWidgetState extends State<FruitsListWidget> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BinController>(
       builder: (bC) {
-        return GetBuilder<MilkController>(
-            init: MilkController(),
-            builder: (mC) {
+        return GetBuilder<FruitsController>(
+            init: FruitsController(),
+            builder: (fC) {
               return Stack(
                 children: [
-                  mC.isLoading
+                  fC.isLoading
                       ? const Align(
                           alignment: Alignment.center,
                           child: CircularProgressIndicator())
-                      : mC.dataProduct.isEmpty
+                      : fC.dataProduct.isEmpty
                           ? const Center(
                               child: Align(
                                   alignment: Alignment.center,
@@ -34,12 +35,11 @@ class _MilkListWidgetState extends State<MilkListWidget> {
                               padding: EdgeInsets.only(top: 70),
                               keyboardDismissBehavior:
                                   ScrollViewKeyboardDismissBehavior.onDrag,
-                              itemCount: mC.dataProduct.length,
+                              itemCount: fC.dataProduct.length,
                               itemExtent: 160,
                               itemBuilder: (BuildContext context, int index) {
-                                final item = mC.dataProduct[index];
-                                return
-                                  Padding(
+                                Product movie = fC.dataProduct[index];
+                                return Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 16, vertical: 10),
                                   child: Stack(
@@ -62,13 +62,9 @@ class _MilkListWidgetState extends State<MilkListWidget> {
                                         clipBehavior: Clip.hardEdge,
                                         child: Row(
                                           children: [
-                                            Container(
-                                                height: 70,
-                                                width: 70,
-                                                child: Image(
-                                                    image: AssetImage(
-                                                        item.imageName))),
-                                            const SizedBox(
+                                            Image(
+                                                image: AssetImage(movie.imageName)),
+                                            SizedBox(
                                               width: 15,
                                             ),
                                             Expanded(
@@ -76,22 +72,22 @@ class _MilkListWidgetState extends State<MilkListWidget> {
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  const SizedBox(
+                                                  SizedBox(
                                                     height: 20,
                                                   ),
                                                   Text(
-                                                    item.title,
-                                                    style: const TextStyle(
+                                                    movie.title,
+                                                    style: TextStyle(
                                                         fontWeight: FontWeight.bold,
                                                         fontSize: 18),
                                                     maxLines: 1,
                                                     overflow: TextOverflow.ellipsis,
                                                   ),
-                                                  const SizedBox(
+                                                  SizedBox(
                                                     height: 5,
                                                   ),
                                                   Text(
-                                                    item.price,
+                                                    movie.price,
                                                     maxLines: 1,
                                                     overflow: TextOverflow.ellipsis,
                                                     style: TextStyle(
@@ -101,7 +97,7 @@ class _MilkListWidgetState extends State<MilkListWidget> {
                                                     height: 20,
                                                   ),
                                                   Text(
-                                                    item.description,
+                                                    movie.description,
                                                     maxLines: 2,
                                                     overflow: TextOverflow.ellipsis,
                                                   ),
@@ -115,8 +111,10 @@ class _MilkListWidgetState extends State<MilkListWidget> {
                                       Material(
                                         color: Colors.transparent,
                                         child: InkWell(
-                                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                                          onTap: () => bC.addToBin(item),
+                                          borderRadius:
+                                              BorderRadius.all(Radius.circular(10)),
+                                          onTap: () => bC.addToBin(movie),
+                                          // onLongPress: () => _binProduct.add(movie),
                                         ),
                                       )
                                     ],
@@ -127,15 +125,15 @@ class _MilkListWidgetState extends State<MilkListWidget> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: TextField(
-                      controller: mC.searchController,
+                      controller: fC.searchController,
                       decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white.withAlpha(235),
                           border: OutlineInputBorder()),
                       onChanged: (v) {
                         setState(() {
-                          v = mC.searchController.text;
-                          mC.searchMovies(v);
+                          v = fC.searchController.text;
+                          fC.searchMovies(v);
                         });
                       },
                     ),
