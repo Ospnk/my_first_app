@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:my_first_app/app/app_routes.dart';
-import 'package:my_first_app/app/buildings.dart';
-import 'package:my_first_app/app/routes.dart';
-import 'package:my_first_app/theme/app_colors.dart';
+import 'package:onlineShop/app/app_routes.dart';
+import 'package:onlineShop/app/buildings.dart';
+import 'package:onlineShop/app/routes.dart';
+import 'package:onlineShop/theme/app_colors.dart';
 
 class OnlineShop extends StatelessWidget {
   const OnlineShop({Key? key}) : super(key: key);

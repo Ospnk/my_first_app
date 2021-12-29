@@ -1,5 +1,6 @@
-import 'package:my_first_app/constants/app_image.dart';
-import 'package:my_first_app/model/product_model.dart';
+
+import 'package:onlineShop/constants/app_image.dart';
+import 'package:onlineShop/model/product_model.dart';
 
 final drinkList = [
   Product(
@@ -94,7 +95,7 @@ final milksList = [
       imageName: AppImages.cream,
       title: 'cream',
       price: '10 \$',
-      description: "hbdsjkhcbf"),
+      description: "this is milk-contained product"),
   Product(
       imageName: AppImages.yougurt,
       title: 'yougurt',

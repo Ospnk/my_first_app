@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_first_app/ui/home/products/bin/bin_list_controller.dart';
-import 'package:my_first_app/ui/home/products/vegetable/vegetable_list_controller.dart';
+import 'package:onlineShop/ui/home/products/bin/bin_list_controller.dart';
+import 'package:onlineShop/ui/home/products/vegetable/vegetable_list_controller.dart';
 
 class VegetablesListWidget extends StatefulWidget {
   const VegetablesListWidget({Key? key}) : super(key: key);
@@ -63,9 +63,13 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                                       child: Row(
                                         children: [
                                           Container(
-                                              child: Image(
-                                                  image: AssetImage(
-                                                      item.imageName))),
+                                              child: Container(
+                                                height: 100,
+                                                width: 100,
+                                                child: Image(
+                                                    image: AssetImage(
+                                                        item.imageName)),
+                                              )),
                                           const SizedBox(
                                             width: 15,
                                           ),
@@ -103,7 +107,7 @@ class _VegetablesListWidgetState extends State<VegetablesListWidget> {
                                                 ),
                                                 Text(
                                                   item.description,
-                                                  maxLines: 2,
+                                                  maxLines: 3,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                 ),

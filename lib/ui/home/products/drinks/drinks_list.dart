@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_first_app/ui/home/products/bin/bin_list_controller.dart';
-import 'package:my_first_app/ui/home/products/drinks/drinks_list_controller.dart';
+import 'package:onlineShop/ui/home/products/bin/bin_list_controller.dart';
+import 'package:onlineShop/ui/home/products/drinks/drinks_list_controller.dart';
 
 class DrinksListWidget extends StatefulWidget {
   DrinksListWidget({Key? key}) : super(key: key);
@@ -61,8 +61,13 @@ class _DrinksListWidgetState extends State<DrinksListWidget> {
                                         clipBehavior: Clip.hardEdge,
                                         child: Row(
                                           children: [
-                                            Image(
-                                                image: AssetImage(item.imageName)),
+                                            Container(
+
+                                          height: 100,
+                                          width: 100,
+                                              child: Image(
+                                                  image: AssetImage(item.imageName)),
+                                            ),
                                             SizedBox(
                                               width: 15,
                                             ),

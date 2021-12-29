@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_first_app/app/routes.dart';
-import 'package:my_first_app/ui/home/products/bin/bin_list_controller.dart';
-import 'package:my_first_app/ui/home/products/drinks/drinks_list.dart';
-import 'package:my_first_app/ui/home/products/fruits/fruits_list.dart';
-import 'package:my_first_app/ui/home/products/milk/milk_list.dart';
-import 'package:my_first_app/ui/home/products/vegetable/vegetable_list.dart';
+import 'package:onlineShop/app/routes.dart';
+import 'package:onlineShop/theme/app_colors.dart';
+import 'package:onlineShop/ui/home/products/bin/bin_list_controller.dart';
+import 'package:onlineShop/ui/home/products/drinks/drinks_list.dart';
+import 'package:onlineShop/ui/home/products/fruits/fruits_list.dart';
+import 'package:onlineShop/ui/home/products/milk/milk_list.dart';
+import 'package:onlineShop/ui/home/products/vegetable/vegetable_list.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -34,11 +35,11 @@ class _MainScreenState extends State<MainScreen> {
       case 1:
         return currentTab = VegetablesListWidget();
       case 2:
-        return currentTab = Container(color: Colors.red);
+        return currentTab = FruitsListWidget();
       case 3:
         return currentTab = DrinksListWidget();
       default:
-        return currentTab = Container(color: Colors.pinkAccent);
+        return currentTab =MilkListWidget();
     }
   }
 
@@ -85,11 +86,12 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: _selectedTab,
         items: const [
           BottomNavigationBarItem(
+            backgroundColor: AppColors.mainDarkBlue,
               icon: Icon(
                 Icons.home,
                 color: Colors.red,
               ),
-              label: 'Vegetables'),
+              label: 'Vegetables',),
           BottomNavigationBarItem(
               icon: Icon(Icons.delivery_dining, color: Colors.red),
               label: 'Fruits'),

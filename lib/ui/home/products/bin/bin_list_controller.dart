@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:my_first_app/model/product_model.dart';
+import 'package:onlineShop/model/product_model.dart';
 
 class BinController extends GetxController {
   List<Product> binProduct = <Product>[];

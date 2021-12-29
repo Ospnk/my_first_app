@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_first_app/model/product_model.dart';
-import 'package:my_first_app/ui/home/products/bin/bin_list_controller.dart';
-import 'package:my_first_app/ui/home/products/fruits/fruits_list_controller.dart';
+import 'package:onlineShop/model/product_model.dart';
+import 'package:onlineShop/ui/home/products/bin/bin_list_controller.dart';
+import 'package:onlineShop/ui/home/products/fruits/fruits_list_controller.dart';
 
 class FruitsListWidget extends StatefulWidget {
   FruitsListWidget({Key? key}) : super(key: key);
@@ -62,8 +62,12 @@ class _FruitsListWidgetState extends State<FruitsListWidget> {
                                         clipBehavior: Clip.hardEdge,
                                         child: Row(
                                           children: [
-                                            Image(
-                                                image: AssetImage(movie.imageName)),
+                                            Container(
+                                              height: 100,
+                                              width: 100,
+                                              child: Image(
+                                                  image: AssetImage(movie.imageName)),
+                                            ),
                                             SizedBox(
                                               width: 15,
                                             ),

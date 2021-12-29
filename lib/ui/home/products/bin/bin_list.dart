@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_first_app/ui/home/products/bin/bin_list_controller.dart';
+import 'package:onlineShop/ui/home/products/bin/bin_list_controller.dart';
 
 class BinScreen extends StatefulWidget {
   const BinScreen({Key? key}) : super(key: key);
@@ -113,11 +113,13 @@ class _BinScreenState extends State<BinScreen> {
                                     ],
                                   ),
                                 ),
+
                               ],
                             ),
                           );
                         },
                       ),
+              
           );
         });
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_first_app/constants/app_image.dart';
-import 'package:my_first_app/data/mock_data.dart';
-import 'package:my_first_app/model/product_model.dart';
+import 'package:onlineShop/constants/app_image.dart';
+import 'package:onlineShop/data/mock_data.dart';
+import 'package:onlineShop/model/product_model.dart';
 
 class MilkController extends GetxController{
   final searchController = TextEditingController();

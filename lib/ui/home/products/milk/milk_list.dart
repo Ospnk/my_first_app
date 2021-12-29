@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_first_app/ui/home/products/bin/bin_list_controller.dart';
-import 'package:my_first_app/ui/home/products/milk/milk_list_controller.dart';
+import 'package:onlineShop/ui/home/products/bin/bin_list_controller.dart';
+import 'package:onlineShop/ui/home/products/milk/milk_list_controller.dart';
 
 class MilkListWidget extends StatefulWidget {
   MilkListWidget({Key? key}) : super(key: key);
@@ -63,8 +63,8 @@ class _MilkListWidgetState extends State<MilkListWidget> {
                                         child: Row(
                                           children: [
                                             Container(
-                                                height: 70,
-                                                width: 70,
+                                                height: 100,
+                                                width: 100,
                                                 child: Image(
                                                     image: AssetImage(
                                                         item.imageName))),
